@@ -1,2 +1,23 @@
 # PyJack
-A python recreation of blackjack, that is terminal based.
+
+A Python recreation of blackjack, that is terminal based.
+
+This game is mainly for learning purposes on my end, and it has certainly worked towards that end.
+
+I use three libraries:
+
+- Pynput.keyboard
+- Random
+- Json
+
+This game is meant for Windows, Python 3.14.2
+
+If you want to play PyJack, then launch the .py file, enter bet amount (cannot be 0 or a negative, or more than your currently held token amount).
+You will gain back double your bet upon a win.
+
+After making your bet, press "e" to hit, press "space" to stand, press "q" to double down.
+
+
+If you run into any problems, you can DM me on discord @happ7
+
+*Project is solely made and maintained by me*
