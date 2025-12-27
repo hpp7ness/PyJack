@@ -1,6 +1,9 @@
 import random
 from pynput import keyboard
 import json
+import msvcrt
+
+# I did this shit in two days bro :skull emoji:
 
 def save_game(tokens): # Game info save logic
      with open("save.json", "w") as f:
@@ -47,8 +50,13 @@ def Bust(input): # Returns true if value of hand is more than 21 (a bust)
      else:
          return False 
 
+def flush_input(): # Clears the stdin, so that the last round's pynput keystrokes don't clog the input()'s for "bet" or "Keep playing? y/n"
+    while msvcrt.kbhit():
+        msvcrt.getch()
+
 def play_game(tokens): # Per round process
      
+     flush_input()
      print(f"You have {tokens} tokens to bet!")
      bet = 0
      while bet > tokens or bet == 0: # Makes sure bet is a valid numerical value (needs upgrading to refuse non-numbers)
@@ -183,8 +191,9 @@ def play_game(tokens): # Per round process
 tokens = load_game() # Load saved tokens or start with 5
 while True: # Game repeat
      tokens = play_game(tokens) # Updates token value
-
-     choice = input("Keep playing? y/n") # Prompt to continue or quit
-     if choice != "y":
-         break 
-save_game(tokens) # Saves token value for next game
+     save_game(tokens) # Saves token value for next game
+    
+     flush_input()
+     choice = input("Play again? (y/n) ") # Prompts for next round
+     if choice != 'y':
+         break
