@@ -4,11 +4,12 @@ A Python recreation of blackjack, that is terminal based.
 
 This game is mainly for learning purposes on my end, and it has certainly worked towards that end.
 
-I use three libraries:
+I use four libraries:
 
-- Pynput.keyboard
-- Random
-- Json
+- Pynput.keyboard (handles most player input)
+- Random (creates deck)
+- Json (Game saving and loading)
+- msvcrt (stdin clearing for pynput and base input() mixing)
 
 This game is meant for Windows, Python 3.14.2
 
