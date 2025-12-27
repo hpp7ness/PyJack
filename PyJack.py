@@ -59,8 +59,17 @@ def play_game(tokens): # Per round process
      flush_input()
      print(f"You have {tokens} tokens to bet!")
      bet = 0
-     while bet > tokens or bet == 0: # Makes sure bet is a valid numerical value (needs upgrading to refuse non-numbers)
-         bet = int(input("What is your bet? ")) 
+     while bet > tokens or bet <= 0: # Makes sure bet is a valid numerical value (needs upgrading to refuse non-numbers)
+         try:
+             bet = int(input("What is your bet? ")) 
+             if bet > tokens:
+                 print("You can not bet more tokens than you have!")
+             if bet == 0:
+                 print("You can not bet nothing!")
+             if bet < 0:
+                 print("You can not bet less than nothing!")
+         except ValueError:
+             print("Please bet with numbers, not letters!")
 
 
      def BustInform(cards): # Tells player if they or dealer has busted, along with hands and values of the busted person
@@ -197,3 +206,4 @@ while True: # Game repeat
      choice = input("Play again? (y/n) ") # Prompts for next round
      if choice != 'y':
          break
+
