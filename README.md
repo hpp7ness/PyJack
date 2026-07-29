@@ -27,3 +27,5 @@ Redux is a recreation of original PyJack with the focus of code improvement firs
 That said, UX, gameplay, etc that would affect game enjoyably may be lesser than original PyJack.
 
 *Project is solely made and maintained by me*
+
+_AI was only used in creation of README file_
