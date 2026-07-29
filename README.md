@@ -21,4 +21,9 @@ After making your bet, press "e" to hit, press "space" to stand, press "q" to do
 
 If you run into any problems, you can DM me on discord @happ7
 
+# Redux
+
+Redux is a recreation of original PyJack with the focus of code improvement first and foremost. 
+That said, UX, gameplay, etc that would affect game enjoyably may be lesser than original PyJack.
+
 *Project is solely made and maintained by me*
